@@ -7,7 +7,7 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import { ThemedTitle } from "@refinedev/mui";
 
-import { propify } from '../assets/propify.png';
+import { logo } from '../assets';
 
 import { CredentialResponse } from "../interfaces/google";
 
@@ -29,7 +29,7 @@ export const Login: React.FC = () => {
       try {
         window.google.accounts.id.initialize({
           ux_mode: "popup",
-          client_id: import.meta.env.VITE_GOOGLE_CLIENT_ID,,
+          client_id: import.meta.env.VITE_GOOGLE_CLIENT_ID,
           callback: async (res: CredentialResponse) => {
             if (res.credential) {
               login(res);
@@ -50,6 +50,10 @@ export const Login: React.FC = () => {
   };
 
   return (
+    <Box
+      component="div"
+      sx={{backgroundColor: '#FCFCFC'}} 
+    >
     <Container
       style={{
         height: "100vh",
@@ -62,19 +66,20 @@ export const Login: React.FC = () => {
         display="flex"
         gap="36px"
         justifyContent="center"
+        alignItems="center"
         flexDirection="column"
       >
-        <ThemedTitle
-          collapsed={false}
-          wrapperStyles={{
-            fontSize: "22px",
-            justifyContent: "center",
-          }}
-        />
+        <div>
+          <img
+            width="200px" 
+            height="auto" 
+            src={logo} 
+            alt="Propify logo"/>
+        </div>
 
         <GoogleButton />
 
-        <Typography align="center" color={"text.secondary"} fontSize="12px">
+        <Typography align="center" color="#000000" fontSize="12px">
           Powered by
           <img
             style={{ padding: "0 5px" }}
@@ -85,5 +90,6 @@ export const Login: React.FC = () => {
         </Typography>
       </Box>
     </Container>
+    </Box>
   );
 };
