@@ -7,6 +7,8 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import { ThemedTitle } from "@refinedev/mui";
 
+import { propify } from '../assets/propify.png';
+
 import { CredentialResponse } from "../interfaces/google";
 
 // Todo: Update your Google Client ID here
@@ -27,7 +29,7 @@ export const Login: React.FC = () => {
       try {
         window.google.accounts.id.initialize({
           ux_mode: "popup",
-          client_id: GOOGLE_CLIENT_ID,
+          client_id: import.meta.env.VITE_GOOGLE_CLIENT_ID,,
           callback: async (res: CredentialResponse) => {
             if (res.credential) {
               login(res);
