@@ -40,7 +40,7 @@ import {
 } from "./pages/categories";
 import { dataProvider } from "./providers/data";
 import { ColorModeContextProvider } from "./contexts/color-mode";
-import { Header } from "./components/header";
+import { Header } from "./components/layout/header";
 import { Login } from "./pages/login";
 import { CredentialResponse } from "./interfaces/google";
 import { parseJwt } from "./utils/parse-jwt";
