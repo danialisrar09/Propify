@@ -1,7 +1,7 @@
 import React from "react";
 import { ThemedLayoutContextProvider } from "@refinedev/mui";
-import { ThemedHeader as DefaultHeader } from "./header";
-import { ThemedSider as DefaultSider } from "./sider";
+import { ThemedHeader as DefaultHeader } from "../header/header";
+import { ThemedSider as DefaultSider } from "../sider/sider";
 import Box from "@mui/material/Box";
 import type { BoxProps } from "@mui/material";
 import type { RefineThemedLayoutProps } from "@refinedev/mui";
